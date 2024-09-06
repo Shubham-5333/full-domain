@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="outer">
+        <div id="inner">
+            <div id="innermost">
+                <button>click me</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    var outer = document.getElementById('outer')
+    var inner = document.getElementById('inner')
+    var innermost = document.getElementById('innermost')
+    outer.addEventListener('click', handleItemClick1)
+    inner.addEventListener('click', handleItemClick2)
+    innermost.addEventListener('click', handleItemClick3)
+
+    function handleItemClick1() {
+       alert('outer')
+    }
+    function handleItemClick2() {
+       alert('inner')
+    }
+    function handleItemClick3() {
+       alert('innermost')
+       event.stopPropogation()
+    }
+
+</script>
+
+</html>
